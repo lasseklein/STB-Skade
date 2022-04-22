@@ -65,7 +65,6 @@ class House {
 function updateScore(score) {
   var degrees = -70.0 + (score*1.4);
   scoreneedle.css({'transform' : 'rotate('+  degrees +'deg)'});
-  //$('#scorevalue').html(score);
   oldscore = parseInt($('#scorevalue').html()); 
   scorecounter(oldscore,oldscore,score,$('#scorevalue') )
 }
@@ -101,7 +100,7 @@ $( document ).ready(function() {
     cellar     : new Room('Kjeller', [brannvarsler, fuktsensor])
   }
 
-	house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
+  house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
   house.update();
   house.serialize();
   
