@@ -115,7 +115,7 @@ $( document ).ready(function() {
   t += "<div class='housemeasures'>";
   t += "{{#measures}}";
   t += "      <div class='measure' id='{{name}}'>{{name}}</div>";
-  t += "{{#measures}}";
+  t += "{{/measures}}";
   t += "</div>";
 
   t += "<div class='rooms'>";
