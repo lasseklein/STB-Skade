@@ -174,9 +174,9 @@ $( document ).ready(function() {
 
   var s = "<label for='newrooms'>Vel rom å legge til:</label>";
   s+="<select name='newrooms' id='newrooms'>";
-  for(var room of rooms) {
+  rooms.forEach(function (room, index) {
     s+="<option value='"+room.name+"'>room.name</option>";
-  }
+  });
   s+="</select>";
   $('#roomlist').append(s);
 });
