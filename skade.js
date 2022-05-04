@@ -140,7 +140,6 @@ $( document ).ready(function() {
   console.log(househtml); //*/
   var root = $('#house');
   //root.append(househtml);
-  $('.measure').on('click',handleEvent2); 
 
   var housemeasures = $("<div class='housemeasures'></div>");
   root.append(housemeasures);
@@ -167,6 +166,8 @@ $( document ).ready(function() {
   }
 //*/
 });
+
+$('.measure').on('click',handleEvent2); 
 
 
 function scorecounter(start,current,target,element) {
