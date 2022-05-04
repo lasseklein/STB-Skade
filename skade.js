@@ -167,7 +167,7 @@ $( document ).ready(function() {
 //*/
 });
 
-$('.measure').on('click',handleEvent2); 
+$('.measure').click (handleEvent2);
 
 
 function scorecounter(start,current,target,element) {
