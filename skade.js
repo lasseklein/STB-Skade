@@ -88,6 +88,10 @@ function handleEvent(e) {
   house.update();
 }
 
+function handleEvent2(e) {
+  console.log (e.target.getAttribute("data-measure") );
+}
+
 var house;
 
 $( document ).ready(function() {
@@ -135,7 +139,7 @@ $( document ).ready(function() {
   console.log(househtml); //*/
   var root = $('#house');
   //root.append(househtml);
-  //$('.measure').on('click',handleEvent); 
+  $('.measure').on('click',handleEvent2); 
 
   var housemeasures = $("<div class='housemeasures'></div>");
   root.append(housemeasures);
