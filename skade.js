@@ -170,13 +170,9 @@ $( document ).ready(function() {
 
   redrawHouse();
 
-
-  var s = "<label for='newrooms'>Vel rom å legge til:</label>";
-  s+="<select name='newrooms' id='newrooms'>";
   for(var room in rooms) {
-    s+="<option value='"+rooms[room].name+"'>"+rooms[room].name+"</option>";
+    s+="<div class='addroombutton' data-roomname='"+rooms[room].name+"'>"+rooms[room].name+"</div>";
   }
-  s+="</select>";
   $('#roomlist').append(s);
 });
 
