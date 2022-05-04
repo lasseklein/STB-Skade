@@ -129,7 +129,7 @@ function toggleMeasure(e) {
 
 }
 
-function removeRoom() {
+function removeRoom(e) {
   const r = e.target.getAttribute("data-room");
   house.removeRoom(r);
   const househtml = template(house);
