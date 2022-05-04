@@ -46,11 +46,11 @@ class House {
       this.update;
     }
   }
-  toggleMeasure(room, measure){
+  getMeasure(room, measure){
     if(room) {
-      this.rooms[room].measure.toggle();
+      return this.rooms[room].measure;
     } else {
-      this.measures[measure].toggle();
+      return this.measures[measure];
     }
   }
   update() {
@@ -96,8 +96,17 @@ function handleEvent(e) {
 }
 
 function handleEvent2(e) {
-  const room = e.target.getAttribute("data-room");
-  const measure = e.target.getAttribute("data-measure");
+  const r = e.target.getAttribute("data-room");
+  const m = e.target.getAttribute("data-measure");
+  const measure = house.getMeasure(r, m);
+  console.log(measure);
+  measure.toggle();
+  if(measure.selected){
+    $(this).addClass('selected');
+  } else {
+    $(this).removeClass('selected');
+  }
+  house.update();
 }
 
 var house;
