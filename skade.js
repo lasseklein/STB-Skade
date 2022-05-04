@@ -109,7 +109,6 @@ $( document ).ready(function() {
 
   house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
   house.update();
-  house.serialize();
   
   var root = $('#house');
   var housemeasures = $("<div class='housemeasures'></div>");
@@ -129,7 +128,7 @@ $( document ).ready(function() {
     roomdiv.append($("<div class='roomname'>"+room.name+"</div>"));
     for(const measure of room.measures) {
       var id = room.name+measure.name;
-      roomdiv.append($("<div class='measure' id='"+id+"' href='#'>"+measure.name+"</div>"));
+      roomdiv.append($("<div class='measure"+((measure.selected)?' selected':'')+"' id='"+id+"' href='#'>"+measure.name+"</div>"));
       $('#'+id).on('click',{'measure': measure}, handleEvent ); 
     } 
     roomnum++;
