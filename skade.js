@@ -155,7 +155,7 @@ $( document ).ready(function() {
   var brannvarsler      = new Measure('Røykvarsler', 20, '');
   var fuktsensor        = new Measure('Fuktsensor', 60, '');
   
-  trooms = {
+  rooms = {
     livingroom : new Room('Stue',    [brannvarsler]),
     kitchen    : new Room('Kjøkken', [brannvarsler, lekkasjesensor]),
     bathroom   : new Room('Bad',     [brannvarsler, lekkasjesensor]),
