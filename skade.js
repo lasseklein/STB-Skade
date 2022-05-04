@@ -170,8 +170,6 @@ $( document ).ready(function() {
 
   redrawHouse();
 
-  $('.measure').click (toggleMeasure);
-  $('.removeroom').click (removeRoom);
 
   var s = "<label for='newrooms'>Vel rom å legge til:</label>";
   s+="<select name='newrooms' id='newrooms'>";
