@@ -129,7 +129,7 @@ $( document ).ready(function() {
   t += "{{/rooms}}";
   t += "</div>";
 
-  var output = Mustache.render(t, JSON.stringify(house));
+console.log( Mustache.render(t, JSON.stringify(house)));
 
   var root = $('#house');
   var housemeasures = $("<div class='housemeasures'></div>");
