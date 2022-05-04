@@ -114,7 +114,7 @@ $( document ).ready(function() {
  var t = "";
   t += "<div class='housemeasures'>";
   t += "{{#measures}}";
-  t += "      <div class='measure' id='{{name}}'>{{name}}</div>";
+  t += "      <div class='measure' data-measure='{{@index}}'>{{name}}</div>";
   t += "{{/measures}}";
   t += "</div>";
 
@@ -123,7 +123,7 @@ $( document ).ready(function() {
   t += "  <div class='room' id='room-{{@index}}'>";
   t += "    <div class='roomname'>{{name}}</div>";
   t += "    {{#measures}}";
-  t += "      <div class='measure{{#selected}} selected{{/selected}}' id='room-{{@../index}}_measure-{{@index}}' href='#'>{{name}}</div>";
+  t += "      <div class='measure{{#selected}} selected{{/selected}}' data-room='{{@../index}}' data-measure='{{@index}}' href='#'>{{name}}</div>";
   t += "    {{/measures}}";
   t += "  </div>";
   t += "{{/rooms}}";
