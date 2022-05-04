@@ -1,3 +1,4 @@
+var Mustache = require('mustache');
 
 var scoreneedle = $("#needle");
 
@@ -109,7 +110,10 @@ $( document ).ready(function() {
 
   house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
   house.update();
-  
+
+  var template = "<div class='housemeasures'></div>";
+  template += "";
+
   var root = $('#house');
   var housemeasures = $("<div class='housemeasures'></div>");
   root.append(housemeasures);
