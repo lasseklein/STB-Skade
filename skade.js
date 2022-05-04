@@ -48,7 +48,7 @@ class House {
   }
   getMeasure(room, measure){
     if(room) {
-      return this.rooms[room].measure;
+      return this.rooms[room].measures[measure];
     } else {
       return this.measures[measure];
     }
