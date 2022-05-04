@@ -151,12 +151,12 @@ $( document ).ready(function() {
   </div>
 `;
 
-  /*var template = Handlebars.compile(t);
+  var template = Handlebars.compile(t);
   const househtml = template(house);
   console.log(househtml); //*/
   var root = $('#house');
-  //root.append(househtml);
-
+  root.append(househtml);
+/*
   var housemeasures = $("<div class='housemeasures'></div>");
   root.append(housemeasures);
   var m = 0;
