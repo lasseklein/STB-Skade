@@ -46,6 +46,13 @@ class House {
       this.update;
     }
   }
+  toggleMeasure(room, measure){
+    if(room) {
+      this.rooms[room].measure.toggle();
+    } else {
+      this.measures[measure].toggle();
+    }
+  }
   update() {
     var allmeasures = [];
     allmeasures = allmeasures.concat(this.measures);
@@ -89,8 +96,8 @@ function handleEvent(e) {
 }
 
 function handleEvent2(e) {
-  alert("jæ");
-  console.log (e.target.getAttribute("data-measure") );
+  const room = e.target.getAttribute("data-room");
+  const measure = e.target.getAttribute("data-measure");
 }
 
 var house;
