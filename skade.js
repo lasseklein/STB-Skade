@@ -1,12 +1,4 @@
 //Uses Mustache
-var view = {
-  title: "Joe",
-  calc: function () {
-    return 2 + 4;
-  }
-};
-
-var output = Mustache.render("{{title}} spends {{calc}}", view);
 
 var scoreneedle = $("#needle");
 
@@ -119,8 +111,25 @@ $( document ).ready(function() {
   house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
   house.update();
 
-  var template = "<div class='housemeasures'></div>";
-  template += "";
+ var t = "";
+  t += "<div class='housemeasures'>";
+  t += "{{#measures}}";
+  t += "      <div class='measure' id='{{name}}'>{{name}}</div>";
+  t += "{{#measures}}";
+  t += "</div>";
+
+  t += "<div class='rooms'>";
+  t += "{{#rooms}}";
+  t += "  <div class='room' id='{{name}}'>";
+  t += "    <div class='roomname'>{{name}}</div>";
+  t += "    {{#measures}}";
+  t += "      <div class='measure {{selected}}' id='{{name}}' href='#'>{{name}}</div>";
+  t += "    {{#measures}}";
+  t += "  </div>";
+  t += "{{#rooms}}";
+  t += "</div>";
+
+  var output = Mustache.render(t, JSON.stringify(house));
 
   var root = $('#house');
   var housemeasures = $("<div class='housemeasures'></div>");
