@@ -84,18 +84,7 @@ function updateScore(score) {
   scorecounter(oldscore,oldscore,score,$('#scorevalue') )
 }
 
-function handleEvent(e) {
-  e.preventDefault();
-  e.data.measure.toggle();
-  if(e.data.measure.selected){
-    $(this).addClass('selected');
-  } else {
-    $(this).removeClass('selected');
-  }
-  house.update();
-}
-
-function handleEvent2(e) {
+function toggleMeasure(e) {
   const r = e.target.getAttribute("data-room");
   const m = e.target.getAttribute("data-measure");
   const measure = house.getMeasure(r, m);
@@ -144,7 +133,9 @@ $( document ).ready(function() {
     <div class='room' data-room='{{@index}}'>
       <div class='roomname'>{{name}}</div>
       {{#measures}}
-        <div class='measure{{#selected}} selected{{/selected}}' data-room='{{@../index}}' data-measure='{{@index}}' href='#'>{{name}}</div>
+        <div class='measure{{#selected}} selected{{/selected}}' data-room='{{@../index}}' data-measure='{{@index}}' href='#'>
+          {{name}}
+        </div>
       {{/measures}}
     </div>
   {{/rooms}}
@@ -156,33 +147,8 @@ $( document ).ready(function() {
   console.log(househtml); //*/
   var root = $('#house');
   root.append(househtml);
-/*
-  var housemeasures = $("<div class='housemeasures'></div>");
-  root.append(housemeasures);
-  var m = 0;
-  for(const measure of house.measures) {
-    $("<div class='measure' data-measure='"+ m++ +"' id='"+measure.name+"'>"+measure.name+"</div>")
-      .appendTo(housemeasures);
-    $('#'+measure.name).on('click',{'measure': measure}, handleEvent); 
-  };
-  
-  var rooms = $("<div class='rooms'></div>");
-  root.append(rooms);
-  var roomnum = 0;
-  for(const room of house.rooms) {
-    var roomdiv = $("<div class='room' data-room='"+roomnum+"' id='"+roomnum+"'></div>");
-    rooms.append(roomdiv);
-    roomdiv.append($("<div class='roomname'>"+room.name+"</div>"));
-    for(const measure of room.measures) {
-      var id = room.name+measure.name;
-      roomdiv.append($("<div class='measure"+((measure.selected)?' selected':'')+"' id='"+id+"' href='#'>"+measure.name+"</div>"));
-      $('#'+id).on('click',{'measure': measure}, handleEvent ); 
-    } 
-    roomnum++;
-  }
-//*/
 
-$('.measure').click (handleEvent2);
+$('.measure').click (toggleMeasure);
 
 });
 
