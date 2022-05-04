@@ -129,8 +129,9 @@ function toggleMeasure(e) {
 
 }
 
-function removeRoom(roomnum) {
-  house.removeRoom(roomnum);
+function removeRoom() {
+  const r = e.target.getAttribute("data-room");
+  house.removeRoom(r);
   const househtml = template(house);
   $('#house').html(househtml);
   $('.measure').click (toggleMeasure);
@@ -163,6 +164,7 @@ $( document ).ready(function() {
   $('#house').append(househtml);
 
   $('.measure').click (toggleMeasure);
+  $('.removeroom').click (removeRoom);
 
 });
 
