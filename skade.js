@@ -3,7 +3,7 @@
 var t = `
 <div class='housemeasures'>
 {{#measures}}
-  <div class='measure' data-measure='{{@index}}'>{{name}}</div>
+  <div class='measure{{#selected}} selected{{/selected}}' data-measure='{{@index}}'>{{name}}</div>
 {{/measures}}
 </div>
 
@@ -126,6 +126,7 @@ function removeRoom(roomnum) {
   house.removeRoom(roomnum);
   const househtml = template(house);
   $('#house').html(househtml);
+  $('.measure').click (toggleMeasure);
 }
 
 var house;
