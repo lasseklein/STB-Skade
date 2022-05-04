@@ -111,23 +111,24 @@ $( document ).ready(function() {
   house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
   house.update();
 
- var t = "";
-  t += "<div class='housemeasures'>";
-  t += "{{#measures}}";
-  t += "      <div class='measure' data-measure='{{@index}}'>{{name}}</div>";
-  t += "{{/measures}}";
-  t += "</div>";
+ var t = `
+  <div class='housemeasures'>
+  {{#measures}}
+    <div class='measure' data-measure='{{@index}}'>{{name}}</div>
+  {{/measures}}
+  </div>
 
-  t += "<div class='rooms'>";
-  t += "{{#rooms}}";
-  t += "  <div class='room' id='room-{{@index}}'>";
-  t += "    <div class='roomname'>{{name}}</div>";
-  t += "    {{#measures}}";
-  t += "      <div class='measure{{#selected}} selected{{/selected}}' data-room='{{@../index}}' data-measure='{{@index}}' href='#'>{{name}}</div>";
-  t += "    {{/measures}}";
-  t += "  </div>";
-  t += "{{/rooms}}";
-  t += "</div>";
+  <div class='rooms'>
+  {{#rooms}}
+    <div class='room' data-room='{{@index}}'>
+      <div class='roomname'>{{name}}</div>
+      {{#measures}}
+        <div class='measure{{#selected}} selected{{/selected}}' data-room='{{@../index}}' data-measure='{{@index}}' href='#'>{{name}}</div>
+      {{/measures}}
+    </div>
+  {{/rooms}}
+  </div>
+`;
 
   var template = Handlebars.compile(t);
   console.log(template(house));
