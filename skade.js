@@ -89,6 +89,7 @@ function handleEvent(e) {
 }
 
 function handleEvent2(e) {
+  alert("jæ");
   console.log (e.target.getAttribute("data-measure") );
 }
 
