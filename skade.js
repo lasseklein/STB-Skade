@@ -79,8 +79,6 @@ function updateScore(score) {
 
 function handleEvent(e) {
   e.preventDefault();
-  console.log(e);
-  console.log(this);
   e.data.measure.toggle();
   if(e.data.measure.selected){
     $(this).addClass('selected');
@@ -132,13 +130,13 @@ $( document ).ready(function() {
   </div>
 `;
 
-  var template = Handlebars.compile(t);
+  /*var template = Handlebars.compile(t);
   const househtml = template(house);
-  console.log(househtml);
+  console.log(househtml); //*/
   var root = $('#house');
-  root.append(househtml);
-  $('.measure').on('click', handleEvent); 
-/*
+  //root.append(househtml);
+  //$('.measure').on('click',handleEvent); 
+
   var housemeasures = $("<div class='housemeasures'></div>");
   root.append(housemeasures);
   for(const measure of house.measures) {
