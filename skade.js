@@ -143,6 +143,7 @@ function redrawHouse(){
 }
 
 var house;
+var rooms;
 
 $( document ).ready(function() {
 
@@ -154,7 +155,7 @@ $( document ).ready(function() {
   var brannvarsler      = new Measure('Røykvarsler', 20, '');
   var fuktsensor        = new Measure('Fuktsensor', 60, '');
   
-  var rooms = {
+  trooms = {
     livingroom : new Room('Stue',    [brannvarsler]),
     kitchen    : new Room('Kjøkken', [brannvarsler, lekkasjesensor]),
     bathroom   : new Room('Bad',     [brannvarsler, lekkasjesensor]),
