@@ -113,8 +113,6 @@ $( document ).ready(function() {
 
  var t = "";
   t += "<div class='housemeasures'>";
-  t += "Score {{score}}";
-  t += "Maxscore {{maxscore}}";
   t += "{{#measures}}";
   t += "      <div class='measure' id='{{name}}'>{{name}}</div>";
   t += "{{/measures}}";
@@ -122,10 +120,10 @@ $( document ).ready(function() {
 
   t += "<div class='rooms'>";
   t += "{{#rooms}}";
-  t += "  <div class='room' id='{{@index}}'>";
+  t += "  <div class='room' id='room-{{@index}}'>";
   t += "    <div class='roomname'>{{name}}</div>";
   t += "    {{#measures}}";
-  t += "      <div class='measure{{#selected}} selected{{/selected}}' id='{{../name}}{{name}}' href='#'>{{name}}</div>";
+  t += "      <div class='measure{{#selected}} selected{{/selected}}' id='room-{{@../index}}_measure-{{@index}}' href='#'>{{name}}</div>";
   t += "    {{/measures}}";
   t += "  </div>";
   t += "{{/rooms}}";
