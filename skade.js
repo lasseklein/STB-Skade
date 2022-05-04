@@ -131,9 +131,11 @@ $( document ).ready(function() {
 `;
 
   var template = Handlebars.compile(t);
-  console.log(template(house));
-
+  const househtml = template(house);
+  console.log(househtml);
   var root = $('#house');
+  root.append(househtml);
+/*
   var housemeasures = $("<div class='housemeasures'></div>");
   root.append(housemeasures);
   for(const measure of house.measures) {
@@ -156,7 +158,7 @@ $( document ).ready(function() {
     } 
     roomnum++;
   }
-
+//*/
 });
 
 
