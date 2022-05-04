@@ -165,9 +165,11 @@ $( document ).ready(function() {
     roomnum++;
   }
 //*/
-});
 
 $('.measure').click (handleEvent2);
+
+});
+
 
 
 function scorecounter(start,current,target,element) {
