@@ -124,9 +124,9 @@ $( document ).ready(function() {
   t += "    <div class='roomname'>{{name}}</div>";
   t += "    {{#measures}}";
   t += "      <div class='measure {{selected}}' id='{{name}}' href='#'>{{name}}</div>";
-  t += "    {{#measures}}";
+  t += "    {{/measures}}";
   t += "  </div>";
-  t += "{{#rooms}}";
+  t += "{{/rooms}}";
   t += "</div>";
 
   var output = Mustache.render(t, JSON.stringify(house));
