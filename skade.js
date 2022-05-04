@@ -34,10 +34,14 @@ class House {
       this.measures.push(measure.clone());
     }
   }
+  rooms = [];
   measures = [];
   score = 0;
   maxscore = 0;
   scorepct = 0;
+  removeRoom(id){
+
+  }
   update() {
     var allmeasures = [];
     allmeasures = allmeasures.concat(this.measures);
