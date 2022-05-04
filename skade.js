@@ -122,7 +122,7 @@ function toggleMeasure(e) {
 
 }
 
-removeRoom(roomnum) {
+function removeRoom(roomnum) {
   house.removeRoom(roomnum);
   const househtml = template(house);
   $('#house').html(househtml);
