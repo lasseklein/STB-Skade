@@ -40,7 +40,10 @@ class House {
   maxscore = 0;
   scorepct = 0;
   removeRoom(roomnum){
-
+    if(this.rooms.length > roomnum){
+      this.rooms.splice(roomnum, 1);
+      this.update;
+    }
   }
   update() {
     var allmeasures = [];
@@ -121,7 +124,7 @@ $( document ).ready(function() {
   root.append(rooms);
   var roomnum = 0;
   for(const room of house.rooms) {
-    var roomdiv = $("<div class='room' id='"+roomid+"'></div>");
+    var roomdiv = $("<div class='room' id='"+roomnum+"'></div>");
     rooms.append(roomdiv);
     roomdiv.append($("<div class='roomname'>"+room.name+"</div>"));
     for(const measure of room.measures) {
