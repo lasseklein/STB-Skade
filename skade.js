@@ -113,8 +113,8 @@ $( document ).ready(function() {
 
  var t = "";
   t += "<div class='housemeasures'>";
-  t += "{{score}}";
-  t += "{{maxscore}}";
+  t += "Score {{score}}";
+  t += "Maxscore {{maxscore}}";
   t += "{{#measures}}";
   t += "      <div class='measure' id='{{name}}'>{{name}}</div>";
   t += "{{/measures}}";
