@@ -168,8 +168,7 @@ $( document ).ready(function() {
   house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
   house.update();
 
-  const househtml = template(house);
-  $('#house').append(househtml);
+  redrawHouse();
 
   $('.measure').click (toggleMeasure);
   $('.removeroom').click (removeRoom);
