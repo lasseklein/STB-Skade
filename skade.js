@@ -9,13 +9,20 @@ var t = `
 
 <div class='rooms'>
 {{#rooms}}
-  <div class='room' data-room='{{@index}}'>
-    <div class='roomname'>{{name}}</div>
-    {{#measures}}
-      <div class='measure{{#selected}} selected{{/selected}}' data-room='{{@../index}}' data-measure='{{@index}}' href='#'>
-        {{name}}
-      </div>
-    {{/measures}}
+  <div class='roomrow'>
+    <div class='room' data-room='{{@index}}'>
+      <div class='roomname'>{{name}}</div>
+      {{#measures}}
+        <div class='measure{{#selected}} selected{{/selected}}' 
+          data-room='{{@../index}}'
+          data-measure='{{@index}}' 
+          href='#'
+        >
+          {{name}}
+        </div>
+      {{/measures}}
+    </div>
+    <div class='removeroom' data-room='{{@index}}'>fjern</div>
   </div>
 {{/rooms}}
 </div>
