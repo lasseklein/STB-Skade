@@ -169,11 +169,12 @@ $( document ).ready(function() {
   house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
 
   redrawHouse();
-
+  
+  var roombuttons="";
   for(var room in rooms) {
-    s+="<div class='addroombutton' data-roomname='"+rooms[room].name+"'>"+rooms[room].name+"</div>";
+    roombuttons+="<div class='addroombutton' data-roomname='"+rooms[room].name+"'>"+rooms[room].name+"</div>";
   }
-  $('#roomlist').append(s);
+  $('#roomlist').append(roombuttons);
 });
 
 
