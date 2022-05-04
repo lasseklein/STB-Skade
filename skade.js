@@ -143,8 +143,9 @@ $( document ).ready(function() {
 
   var housemeasures = $("<div class='housemeasures'></div>");
   root.append(housemeasures);
+  var m = 0;
   for(const measure of house.measures) {
-    $("<div class='measure' id='"+measure.name+"'>"+measure.name+"</div>")
+    $("<div class='measure' data-measure='"+ m++ +"' id='"+measure.name+"'>"+measure.name+"</div>")
       .appendTo(housemeasures);
     $('#'+measure.name).on('click',{'measure': measure}, handleEvent); 
   };
@@ -153,7 +154,7 @@ $( document ).ready(function() {
   root.append(rooms);
   var roomnum = 0;
   for(const room of house.rooms) {
-    var roomdiv = $("<div class='room' id='"+roomnum+"'></div>");
+    var roomdiv = $("<div class='room' data-room='"+roomnum+"' id='"+roomnum+"'></div>");
     rooms.append(roomdiv);
     roomdiv.append($("<div class='roomname'>"+room.name+"</div>"));
     for(const measure of room.measures) {
