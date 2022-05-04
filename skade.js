@@ -39,7 +39,7 @@ class House {
   score = 0;
   maxscore = 0;
   scorepct = 0;
-  removeRoom(id){
+  removeRoom(roomnum){
 
   }
   update() {
@@ -119,8 +119,9 @@ $( document ).ready(function() {
   
   var rooms = $("<div class='rooms'></div>");
   root.append(rooms);
+  var roomnum = 0;
   for(const room of house.rooms) {
-    var roomdiv = $("<div class='room'></div>");
+    var roomdiv = $("<div class='room' id='"+roomid+"'></div>");
     rooms.append(roomdiv);
     roomdiv.append($("<div class='roomname'>"+room.name+"</div>"));
     for(const measure of room.measures) {
@@ -128,6 +129,7 @@ $( document ).ready(function() {
       roomdiv.append($("<div class='measure' id='"+id+"' href='#'>"+measure.name+"</div>"));
       $('#'+id).on('click',{'measure': measure}, handleEvent ); 
     } 
+    roomnum++;
   }
 
 });
