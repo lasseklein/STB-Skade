@@ -1,5 +1,28 @@
 //Uses Handlebars
 
+var t = `
+<div class='housemeasures'>
+{{#measures}}
+  <div class='measure' data-measure='{{@index}}'>{{name}}</div>
+{{/measures}}
+</div>
+
+<div class='rooms'>
+{{#rooms}}
+  <div class='room' data-room='{{@index}}'>
+    <div class='roomname'>{{name}}</div>
+    {{#measures}}
+      <div class='measure{{#selected}} selected{{/selected}}' data-room='{{@../index}}' data-measure='{{@index}}' href='#'>
+        {{name}}
+      </div>
+    {{/measures}}
+  </div>
+{{/rooms}}
+</div>
+`;
+
+var template = Handlebars.compile(t);
+
 var scoreneedle = $("#needle");
 
 class Measure {
@@ -96,6 +119,13 @@ function toggleMeasure(e) {
     $(this).removeClass('selected');
   }
   house.update();
+
+}
+
+removeRoom(roomnum) {
+  house.removeRoom(roomnum);
+  const househtml = template(house);
+  $('#house').html(househtml);
 }
 
 var house;
@@ -121,34 +151,10 @@ $( document ).ready(function() {
   house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
   house.update();
 
- var t = `
-  <div class='housemeasures'>
-  {{#measures}}
-    <div class='measure' data-measure='{{@index}}'>{{name}}</div>
-  {{/measures}}
-  </div>
-
-  <div class='rooms'>
-  {{#rooms}}
-    <div class='room' data-room='{{@index}}'>
-      <div class='roomname'>{{name}}</div>
-      {{#measures}}
-        <div class='measure{{#selected}} selected{{/selected}}' data-room='{{@../index}}' data-measure='{{@index}}' href='#'>
-          {{name}}
-        </div>
-      {{/measures}}
-    </div>
-  {{/rooms}}
-  </div>
-`;
-
-  var template = Handlebars.compile(t);
   const househtml = template(house);
-  console.log(househtml); //*/
-  var root = $('#house');
-  root.append(househtml);
+  $('#house').append(househtml);
 
-$('.measure').click (toggleMeasure);
+  $('.measure').click (toggleMeasure);
 
 });
 
