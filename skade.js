@@ -79,6 +79,8 @@ function updateScore(score) {
 
 function handleEvent(e) {
   e.preventDefault();
+  console.log(e);
+  console.log(this);
   e.data.measure.toggle();
   if(e.data.measure.selected){
     $(this).addClass('selected');
@@ -135,6 +137,7 @@ $( document ).ready(function() {
   console.log(househtml);
   var root = $('#house');
   root.append(househtml);
+  $('.measure').on('click', handleEvent); 
 /*
   var housemeasures = $("<div class='housemeasures'></div>");
   root.append(housemeasures);
