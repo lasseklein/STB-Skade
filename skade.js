@@ -178,6 +178,7 @@ $( document ).ready(function() {
     s+="<option value='"+room.name+"'>room.name</option>";
   }
   s+="</select>";
+  $('#roomlist').append(s);
 });
 
 
