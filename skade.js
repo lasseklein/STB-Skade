@@ -1,4 +1,4 @@
-//Uses Mustache
+//Uses Handlebars
 
 var scoreneedle = $("#needle");
 
@@ -130,8 +130,9 @@ $( document ).ready(function() {
   t += "  </div>";
   t += "{{/rooms}}";
   t += "</div>";
-console.log(JSON.stringify(house));
-console.log( Mustache.to_html(t, house));
+
+  var template = Handlebars.compile(t);
+  console.log(template(house));
 
   var root = $('#house');
   var housemeasures = $("<div class='housemeasures'></div>");
