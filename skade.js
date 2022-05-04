@@ -74,6 +74,7 @@ class House {
     if(this.rooms.length > roomnum){
       this.rooms.splice(roomnum, 1);
       this.update;
+      redrawHouse();
     }
   }
   getMeasure(room, measure){
@@ -132,7 +133,7 @@ function toggleMeasure(e) {
 function removeRoom(e) {
   const r = e.target.getAttribute("data-room");
   house.removeRoom(r);
-  redrawHouse();
+
 }
 
 function redrawHouse(){
