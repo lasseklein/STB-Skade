@@ -138,6 +138,7 @@ function removeRoom(e) {
 function redrawHouse(){
   const househtml = template(house);
   $('#house').html(househtml);
+  updateScore(house.scorepct);
   $('.measure').click (toggleMeasure);
   $('.removeroom').click (removeRoom);
 }
