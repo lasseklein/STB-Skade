@@ -64,6 +64,7 @@ class House {
     for(const measure of measures) {
       this.measures.push(measure.clone());
     }
+    this.update();
   }
   rooms = [];
   measures = [];
@@ -137,9 +138,9 @@ function removeRoom(e) {
 }
 
 function redrawHouse(){
+  house.update();
   const househtml = template(house);
   $('#house').html(househtml);
-  updateScore(house.scorepct);
   $('.measure').click (toggleMeasure);
   $('.removeroom').click (removeRoom);
 }
@@ -166,7 +167,6 @@ $( document ).ready(function() {
   }
 
   house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
-  house.update();
 
   redrawHouse();
 
