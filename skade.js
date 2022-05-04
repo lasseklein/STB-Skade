@@ -132,9 +132,14 @@ function toggleMeasure(e) {
 function removeRoom(e) {
   const r = e.target.getAttribute("data-room");
   house.removeRoom(r);
+  redrawHouse();
+}
+
+function redrawHouse(){
   const househtml = template(house);
   $('#house').html(househtml);
   $('.measure').click (toggleMeasure);
+  $('.removeroom').click (removeRoom);
 }
 
 var house;
