@@ -3,7 +3,7 @@
 
 var opts = {
   angle: -0.2, // The span of the gauge arc
-  animationSpeed: 20,
+  animationSpeed: 11  ,
   fontSize: 41,
   lineWidth: 0.23, // The line thickness
   radiusScale: 1, // Relative radius
@@ -159,10 +159,11 @@ class House {
 }
 
 function updateScore(score) {
-  var degrees = -70.0 + (score*1.4);
-  scoreneedle.css({'transform' : 'rotate('+  degrees +'deg)'});
-  oldscore = parseInt($('#scorevalue').html()); 
-  scorecounter(oldscore,oldscore,score,$('#scorevalue') )
+  gauge.set(score);
+  //var degrees = -70.0 + (score*1.4);
+  //scoreneedle.css({'transform' : 'rotate('+  degrees +'deg)'});
+  //oldscore = parseInt($('#scorevalue').html()); 
+  //scorecounter(oldscore,oldscore,score,$('#scorevalue') )
 }
 
 function toggleMeasure(e) {
