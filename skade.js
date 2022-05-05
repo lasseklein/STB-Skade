@@ -72,7 +72,7 @@ class House {
   maxscore = 0;
   scorepct = 0;
   addRoom(room) {
-    this.rooms.push(room):
+    this.rooms.push(room);
     this.update();
     redrawHouse();
   }
