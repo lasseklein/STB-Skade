@@ -183,7 +183,7 @@ $( document ).ready(function() {
   if ( savedhouse ) {
     house = new House();
     //house = JSON.parse( savedhouse );
-    Object.assign(new house, savedhouse)
+    Object.assign(new House, savedhouse)
     console.log('house: '+house);
   } else {
     house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
