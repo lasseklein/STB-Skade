@@ -137,7 +137,9 @@ function toggleMeasure(e) {
 }
 function addRoom(e){
   const roomname = e.target.getAttribute("data-roomname");
-  house.addRoom(rooms[roomname].clone());
+  const room = rooms[roomname];
+  console.log(room);
+  house.addRoom(room.clone());
 }
 
 function removeRoom(e) {
