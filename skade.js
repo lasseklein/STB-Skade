@@ -27,12 +27,6 @@ var opts = {
  ],
 
 };
-var target = document.getElementById('gaugecanvas'); // your canvas element
-var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
-gauge.maxValue = 100; // set max gauge value
-gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
-gauge.setTextField( document.getElementById( 'gaugescore' ));
-gauge.set(0); // set actual value
 
 var t = `
 <div class='housemeasures'>
@@ -238,6 +232,15 @@ $( document ).ready(function() {
   }
   $('#roomlist').append(roombuttons);
   $('.addroombutton').click(addRoom);
+
+
+
+  var target = document.getElementById('gaugecanvas'); // your canvas element
+var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+gauge.maxValue = 100; // set max gauge value
+gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+gauge.setTextField( document.getElementById( 'gaugescore' ));
+gauge.set(0); // set actual value
 
 });
 
