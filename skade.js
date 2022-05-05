@@ -12,17 +12,19 @@ var t = `
   <div class='roomrow'>
     <div class='room' data-room='{{@index}}'>
       <div class='roomname'>{{name}}</div>
-      {{#measures}}
-        <div class='measure{{#selected}} selected{{/selected}}' 
-          data-room='{{@../index}}'
-          data-measure='{{@index}}' 
-          href='#'
-        >
-          {{name}}
+        <div class='sf-measures'>
+        {{#measures}}
+          <div class='measure{{#selected}} selected{{/selected}}' 
+            data-room='{{@../index}}'
+            data-measure='{{@index}}' 
+            href='#'
+          >
+            {{name}}
+          </div>
+        {{/measures}}
         </div>
-      {{/measures}}
     </div>
-    <div class='removeroom' data-room='{{@index}}'>fjern</div>
+    <div class='removeroom' data-room='{{@index}}'>&#x2715;</div>
   </div>
 {{/rooms}}
 </div>
@@ -185,6 +187,7 @@ $( document ).ready(function() {
 
   const savedhouse = localStorage.getItem('ssx_house');
   if ( 0 ) {
+    // need to recreate referenced classes too here...
     oldhouse = JSON.parse( savedhouse );
     console.log('oh: '+oldhouse);
     house = new House(oldhouse.rooms, oldhouse.measures);
