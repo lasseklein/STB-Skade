@@ -54,7 +54,10 @@ class Room {
        this.measures.push(measure.clone());
     }
    }
-    measures = [];
+  measures = [];
+  clone() {
+    return new Room(this.name, this.measures);
+  }
 }
 
 
