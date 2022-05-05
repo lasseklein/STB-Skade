@@ -168,11 +168,11 @@ $( document ).ready(function() {
   var fuktsensor        = new Measure('Fuktsensor', 60, '');
   
   rooms = {
-    livingroom : new Room('Stue',    [brannvarsler]),
-    kitchen    : new Room('Kjøkken', [brannvarsler, lekkasjesensor]),
-    bathroom   : new Room('Bad',     [brannvarsler, lekkasjesensor]),
-    bedroom    : new Room('Soverom', [brannvarsler, lekkasjesensor]),
-    cellar     : new Room('Kjeller', [brannvarsler, fuktsensor])
+    'Stue'    : new Room('Stue',    [brannvarsler]),
+    'Kjøkken' : new Room('Kjøkken', [brannvarsler, lekkasjesensor]),
+    'Bad'     : new Room('Bad',     [brannvarsler, lekkasjesensor]),
+    'Soverom' : new Room('Soverom', [brannvarsler, lekkasjesensor]),
+    'Kjeller' : new Room('Kjeller', [brannvarsler, fuktsensor])
   }
 
   house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
@@ -184,7 +184,7 @@ $( document ).ready(function() {
     roombuttons+="<div class='addroombutton' data-roomname='"+rooms[room].name+"'>"+rooms[room].name+"</div>";
   }
   $('#roomlist').append(roombuttons);
-  $('.addroombutton').click (addRoom);
+  $('.addroombutton').click(addRoom);
 
 });
 
