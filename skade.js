@@ -113,8 +113,9 @@ class House {
     this.serialize();
   }
   serialize() {
-    localStorage.setItem('house', JSON.stringify(this));
+    localStorage.setItem('ssx_house', JSON.stringify(this));
   }
+
 }
 
 function updateScore(score) {
@@ -140,9 +141,7 @@ function toggleMeasure(e) {
 }
 function addRoom(e){
   const roomname = e.target.getAttribute("data-roomname");
-  const room = rooms[roomname];
-  console.log(room);
-  house.addRoom(room.clone());
+  house.addRoom( rooms[roomname].clone() );
 }
 
 function removeRoom(e) {
@@ -180,7 +179,12 @@ $( document ).ready(function() {
     'Kjeller' : new Room('Kjeller', [brannvarsler, fuktsensor])
   }
 
-  house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
+  const savedhouse = localStorage.getItem('ssx_house');
+  if ( savedhouse ) {
+    house = JSON.parse( savedhouse );
+  } else {
+    house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
+  }
 
   redrawHouse();
   
