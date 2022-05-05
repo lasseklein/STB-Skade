@@ -71,10 +71,15 @@ class House {
   score = 0;
   maxscore = 0;
   scorepct = 0;
+  addRoom(room) {
+    this.rooms.push(room):
+    this.update();
+    redrawHouse();
+  }
   removeRoom(roomnum){
     if(this.rooms.length > roomnum){
       this.rooms.splice(roomnum, 1);
-      this.update;
+      this.update();
       redrawHouse();
     }
   }
@@ -130,6 +135,9 @@ function toggleMeasure(e) {
   house.update();
 
 }
+function addRoom(roomname){
+  house.addRoom(rooms[roomname]);
+}
 
 function removeRoom(e) {
   const r = e.target.getAttribute("data-room");
@@ -175,6 +183,8 @@ $( document ).ready(function() {
     roombuttons+="<div class='addroombutton' data-roomname='"+rooms[room].name+"'>"+rooms[room].name+"</div>";
   }
   $('#roomlist').append(roombuttons);
+  $('.addroombutton').click (addRoom);
+
 });
 
 
