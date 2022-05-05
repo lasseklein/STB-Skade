@@ -136,7 +136,7 @@ function toggleMeasure(e) {
 
 }
 function addRoom(roomname){
-  house.addRoom(rooms[roomname]);
+  house.addRoom(rooms[roomname].clone());
 }
 
 function removeRoom(e) {
