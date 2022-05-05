@@ -181,7 +181,9 @@ $( document ).ready(function() {
 
   const savedhouse = localStorage.getItem('ssx_house');
   if ( savedhouse ) {
+    house = new House();
     house = JSON.parse( savedhouse );
+    console.log('house: '+house);
   } else {
     house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
   }
