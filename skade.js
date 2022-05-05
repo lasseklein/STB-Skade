@@ -2,7 +2,8 @@
 //Uses https://bernii.github.io/gauge.js/
 
 var opts = {
-  angle: -1, // The span of the gauge arc
+  angle: -0.2, // The span of the gauge arc
+  animationSpeed: 11,
   lineWidth: 0.44, // The line thickness
   radiusScale: 1, // Relative radius
   pointer: {
@@ -17,7 +18,8 @@ var opts = {
   strokeColor: '#E0E0E0',  // to see which ones work best for you
   generateGradient: true,
   highDpiSupport: true,     // High resolution support
-  percentColors : [[0.0, "#a9d70b" ], [0.50, "#f9c802"], [1.0, "#ff0000"]]
+  percentColors : [[0.0, "#a9d70b" ], [0.50, "#f9c802"], [1.0, "#ff0000"]],
+  
 };
 var target = document.getElementById('gaugecanvas'); // your canvas element
 var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
