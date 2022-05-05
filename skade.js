@@ -135,7 +135,8 @@ function toggleMeasure(e) {
   house.update();
 
 }
-function addRoom(roomname){
+function addRoom(e){
+  const roomname = e.target.getAttribute("data-roomname");
   house.addRoom(rooms[roomname].clone());
 }
 
