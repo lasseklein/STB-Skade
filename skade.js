@@ -18,7 +18,7 @@ var opts = {
   highDpiSupport: true,     // High resolution support
   percentColors : [[0.0, "#a9d70b" ], [0.50, "#f9c802"], [1.0, "#ff0000"]]
 };
-var target = document.getElementById('gauge'); // your canvas element
+var target = document.getElementById('gaugecanvas'); // your canvas element
 var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
 gauge.maxValue = 3000; // set max gauge value
 gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
