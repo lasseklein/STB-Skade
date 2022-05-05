@@ -185,9 +185,9 @@ $( document ).ready(function() {
 
   const savedhouse = localStorage.getItem('ssx_house');
   if ( savedhouse ) {
-    house = new House();
-    //house = JSON.parse( savedhouse );
-    Object.assign(new House, savedhouse)
+    oldhouse = JSON.parse( savedhouse );
+    house = new House(oldhouse.rooms, oldhouse.measures);
+    //Object.assign(new House, savedhouse)
     console.log('house: '+house);
   } else {
     house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
