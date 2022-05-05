@@ -23,8 +23,8 @@ var t = `
           </div>
         {{/measures}}
         </div>
-    </div>
-    <div class='removeroom' data-room='{{@index}}'>&#x2715;</div>
+        <div class='removeroom' data-room='{{@index}}'>&#x2715;</div>
+      </div>
   </div>
 {{/rooms}}
 </div>
