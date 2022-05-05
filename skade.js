@@ -1,7 +1,8 @@
-//Uses Handlebars, gauge
+//Uses Handlebars
+//Uses https://bernii.github.io/gauge.js/
 
 var opts = {
-  angle: 0.15, // The span of the gauge arc
+  angle: -1, // The span of the gauge arc
   lineWidth: 0.44, // The line thickness
   radiusScale: 1, // Relative radius
   pointer: {
