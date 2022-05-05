@@ -3,8 +3,7 @@
 
 var opts = {
   angle: -0.2, // The span of the gauge arc
-  animationSpeed: 20t
-  ,
+  animationSpeed: 20,
   fontSize: 41,
   lineWidth: 0.23, // The line thickness
   radiusScale: 1, // Relative radius
