@@ -6,7 +6,7 @@ var opts = {
   animationSpeed: 11  ,
   fontSize: 41,
   lineWidth: 0.23, // The line thickness
-  radiusScale: 1, // Relative radius
+  radiusScale: 0.75, // Relative radius
   pointer: {
     length: 0.6, // // Relative to gauge radius
     strokeWidth: 0.035, // The thickness
