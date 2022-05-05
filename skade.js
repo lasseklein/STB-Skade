@@ -63,9 +63,13 @@ class Room {
 
 class House {
 	constructor (rooms, measures) {
-  	this.rooms = rooms; 
-    for(const measure of measures) {
-      this.measures.push(measure.clone());
+    if (rooms) {
+    	this.rooms = rooms;
+    } 
+    if (measures) {
+      for(const measure of measures) {
+        this.measures.push(measure.clone());
+      }
     }
     this.update();
   }
