@@ -184,7 +184,7 @@ $( document ).ready(function() {
   }
 
   const savedhouse = localStorage.getItem('ssx_house');
-  if ( savedhouse ) {
+  if ( 0 ) {
     oldhouse = JSON.parse( savedhouse );
     console.log('oh: '+oldhouse);
     house = new House(oldhouse.rooms, oldhouse.measures);
