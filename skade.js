@@ -37,12 +37,11 @@ gauge.set(0); // set actual value
 var t = `
 <div class='house'>
   <div class='housemeasures'>
-  <div class="heading-xsmall">Hele huset</div>
+    <div class="heading-xsmall">Hele huset</div>
     {{#measures}}
       <div class='measurecontainer'>
         <div class='measure{{#selected}} selected{{/selected}}'
-          data-measure='{{@index}}'
-        >
+          data-measure='{{@index}}'>
           {{name}}
         </div>
       </div>
@@ -51,25 +50,24 @@ var t = `
 </div>
 
 <div class='rooms'>
-{{#rooms}}
-  <div class='roomrow'>
-    <div class='room' data-room='{{@index}}'>
-      <div class='roomname'>{{name}}</div>
-      <div class='measurecontainer'>
-        {{#measures}}
-          <div class='measure{{#selected}} selected{{/selected}}' 
-            data-room='{{@../index}}'
-            data-measure='{{@index}}' 
-            href='#'
-          >
-            {{name}}
-          </div>
-        {{/measures}}
+  {{#rooms}}
+    <div class='roomrow'>
+      <div class='room' data-room='{{@index}}'>
+        <div class='roomname'>{{name}}</div>
+        <div class='measurecontainer'>
+          {{#measures}}
+            <div class='measure{{#selected}} selected{{/selected}}' 
+              data-room='{{@../index}}'
+              data-measure='{{@index}}' 
+              href='#'>
+              {{name}}
+            </div>
+          {{/measures}}
+        </div>
         <div class='removeroom' data-room='{{@index}}'>&#x2715;</div>
       </div>
     </div>
-  </div>
-{{/rooms}}
+  {{/rooms}}
 </div>
 `;
 
