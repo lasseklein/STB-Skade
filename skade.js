@@ -55,21 +55,19 @@ var t = `
   <div class='roomrow'>
     <div class='room' data-room='{{@index}}'>
       <div class='roomname'>{{name}}</div>
-        <div class='sf-measures'>
+      <div class='measurecontainer'>
         {{#measures}}
-          <div class='measurecontainer'>
-            <div class='measure{{#selected}} selected{{/selected}}' 
-              data-room='{{@../index}}'
-              data-measure='{{@index}}' 
-              href='#'
-            >
-              {{name}}
-            </div>
+          <div class='measure{{#selected}} selected{{/selected}}' 
+            data-room='{{@../index}}'
+            data-measure='{{@index}}' 
+            href='#'
+          >
+            {{name}}
           </div>
         {{/measures}}
-        </div>
         <div class='removeroom' data-room='{{@index}}'>&#x2715;</div>
       </div>
+    </div>
   </div>
 {{/rooms}}
 </div>
