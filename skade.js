@@ -209,6 +209,8 @@ $( document ).ready(function() {
 
   var vannstopper       = new Measure('Vannstopper', 100, 'Stopper vannet');
   var alarm             = new Measure('Alarm', 50, 'Om alarm');
+  var alarmvarsling     = new Measure('Innbruddsvarsling til alarmselskap', 50, 'Om alarm');
+  var brannvarsling     = new Measure('Brannvarsling til alarmselskap', 50, 'Om alarm');
   var automatsikringer  = new Measure('Automatsikringer', 75, '');
   var ror               = new Measure('Rør-i-rør', 50, '');
   var lekkasjesensor    = new Measure('Lekkasjesensor', 25, '');
@@ -231,7 +233,7 @@ $( document ).ready(function() {
     house = new House(oldhouse.rooms, oldhouse.measures);
     //Object.assign(new House, savedhouse)
   } else {
-    house = new House(Object.values(rooms), [vannstopper,lekkasjesensor,alarm,automatsikringer,ror]);
+    house = new House(Object.values(rooms), [vannstopper,lekkasjesensor,automatsikringer,ror,alarm,alarmvarsling,brannvarsling]);
   }
 
   redrawHouse();
