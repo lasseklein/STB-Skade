@@ -37,7 +37,7 @@ gauge.set(0); // set actual value
 var t = `
 <div class='housemeasures'>
   <div class='house'>
-    <p>Hele huset</p>
+    <div>Hele huset</div>
     {{#measures}}
       <div class='measure{{#selected}} selected{{/selected}}' data-measure='{{@index}}'>{{name}}</div>
     {{/measures}}
