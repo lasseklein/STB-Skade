@@ -231,7 +231,7 @@ $( document ).ready(function() {
     house = new House(oldhouse.rooms, oldhouse.measures);
     //Object.assign(new House, savedhouse)
   } else {
-    house = new House(Object.values(rooms), [vannstopper,alarm,automatsikringer,ror]);
+    house = new House(Object.values(rooms), [vannstopper,lekkasjesensor,alarm,automatsikringer,ror]);
   }
 
   redrawHouse();
