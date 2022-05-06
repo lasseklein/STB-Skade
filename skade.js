@@ -65,8 +65,8 @@ var t = `
               </div>
             {{/measures}}
           </div>
-          <div class='removeroom' data-room='{{@index}}'>&#x2715;</div>
         </div>
+        <div class='removeroom' data-room='{{@index}}'>&#x2715;</div>
       </div>
     </div>
   {{/rooms}}
