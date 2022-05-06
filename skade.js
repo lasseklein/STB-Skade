@@ -1,5 +1,6 @@
 //Uses Handlebars
 //Uses https://bernii.github.io/gauge.js/
+console.log("fra git?");
 
 var opts = {
   angle: -0.2, // The span of the gauge arc
