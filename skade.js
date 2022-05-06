@@ -1,6 +1,5 @@
 //Uses Handlebars
 //Uses https://bernii.github.io/gauge.js/
-console.log("fra git?");
 
 var opts = {
   angle: -0.2, // The span of the gauge arc
@@ -37,9 +36,11 @@ gauge.set(0); // set actual value
 
 var t = `
 <div class='housemeasures'>
-{{#measures}}
-  <div class='measure{{#selected}} selected{{/selected}}' data-measure='{{@index}}'>{{name}}</div>
-{{/measures}}
+  <div class='house'>
+    {{#measures}}
+      <div class='measure{{#selected}} selected{{/selected}}' data-measure='{{@index}}'>{{name}}</div>
+    {{/measures}}
+  </div>
 </div>
 
 <div class='rooms'>
