@@ -39,7 +39,13 @@ var t = `
   <div class='housemeasures'>
   <div class="heading-xsmall">Hele huset</div>
     {{#measures}}
-      <div class='measure{{#selected}} selected{{/selected}}' data-measure='{{@index}}'>{{name}}</div>
+      <div class='measurecontainer'>
+        <div class='measure{{#selected}} selected{{/selected}}'
+          data-measure='{{@index}}'
+        >
+          {{name}}
+        </div>
+      </div>
     {{/measures}}
   </div>
 </div>
@@ -51,12 +57,14 @@ var t = `
       <div class='roomname'>{{name}}</div>
         <div class='sf-measures'>
         {{#measures}}
-          <div class='measure{{#selected}} selected{{/selected}}' 
-            data-room='{{@../index}}'
-            data-measure='{{@index}}' 
-            href='#'
-          >
-            {{name}}
+          <div class='measurecontainer'>
+            <div class='measure{{#selected}} selected{{/selected}}' 
+              data-room='{{@../index}}'
+              data-measure='{{@index}}' 
+              href='#'
+            >
+              {{name}}
+            </div>
           </div>
         {{/measures}}
         </div>
