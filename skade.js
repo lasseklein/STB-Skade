@@ -219,7 +219,7 @@ $( document ).ready(function() {
     'Stue'    : new Room('Stue',    [brannvarsler]),
     'Kjøkken' : new Room('Kjøkken', [brannvarsler, lekkasjesensor]),
     'Bad'     : new Room('Bad',     [brannvarsler, lekkasjesensor]),
-    'Soverom' : new Room('Soverom', [brannvarsler, lekkasjesensor]),
+    'Soverom' : new Room('Soverom', [brannvarsler]),
     'Kjeller' : new Room('Kjeller', [brannvarsler, fuktsensor])
   }
 
