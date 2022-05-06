@@ -208,9 +208,9 @@ var rooms;
 $( document ).ready(function() {
 
   var vannstopper       = new Measure('Vannstopper', 100, 'Stopper vannet');
-  var alarm             = new Measure('Alarm', 50, 'Om alarm');
-  var alarmvarsling     = new Measure('Innbruddsvarsling til alarmselskap', 50, 'Om alarm');
-  var brannvarsling     = new Measure('Brannvarsling til alarmselskap', 50, 'Om alarm');
+  var alarm             = new Measure('Innbruddsalarm', 50, 'Om alarm');
+  var alarmvarsling     = new Measure('Innbruddsvarsling til alarmselskap', 50, 'Om varsling');
+  var brannvarsling     = new Measure('Brannvarsling til alarmselskap', 50, 'Om brannvarsling');
   var automatsikringer  = new Measure('Automatsikringer', 75, '');
   var ror               = new Measure('Rør-i-rør', 50, '');
   var lekkasjesensor    = new Measure('Lekkasjesensor', 25, '');
