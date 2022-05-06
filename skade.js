@@ -55,16 +55,16 @@ var t = `
       <div class='room' data-room='{{@index}}'>
         <div class='roomname'>{{name}}</div>
         <div class='roommeasures'>
-          <div class='measurecontainer'>
-            {{#measures}}
+          {{#measures}}
+            <div class='measurecontainer'>
               <div class='measure{{#selected}} selected{{/selected}}' 
                 data-room='{{@../index}}'
                 data-measure='{{@index}}' 
                 href='#'>
                 {{name}}
               </div>
+            </div>
             {{/measures}}
-          </div>
         </div>
         <div class='removeroom' data-room='{{@index}}'>&#x2715;</div>
       </div>
