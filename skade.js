@@ -75,8 +75,6 @@ var t = `
 
 var template = Handlebars.compile(t);
 
-var scoreneedle = $("#needle");
-
 class Measure {
 	constructor (name, value, description) {
   	this.name = name;
@@ -169,10 +167,6 @@ class House {
 
 function updateScore(score) {
   gauge.set(score);
-  //var degrees = -70.0 + (score*1.4);
-  //scoreneedle.css({'transform' : 'rotate('+  degrees +'deg)'});
-  //oldscore = parseInt($('#scorevalue').html()); 
-  //scorecounter(oldscore,oldscore,score,$('#scorevalue') )
 }
 
 function toggleMeasure(e) {
@@ -189,6 +183,7 @@ function toggleMeasure(e) {
   house.update();
 
 }
+
 function addRoom(e){
   const roomname = e.target.getAttribute("data-roomname");
   house.addRoom( rooms[roomname].clone() );
@@ -251,26 +246,5 @@ $( document ).ready(function() {
   $('#roomlist').append(roombuttons);
   $('.addroombutton').click(addRoom);
 
-
-
-
 });
 
-
-
-function scorecounter(start,current,target,element) {
-  const duration = 250;
-  var dir = (target>start)?1:-1;
-  var diff = dir*(target-start);
-  var speed = duration/diff;
-
-  var step = dir*Math.trunc((target-start) / speed);
-  step = (step<1)?1:step;
-  current += dir*step;
-  if (dir*(target-current)>0) {
-    element.html(current);
-    setTimeout(scorecounter, speed, start,current,target,element);
-  } else {
-    element.html(target);
-  }
-}
