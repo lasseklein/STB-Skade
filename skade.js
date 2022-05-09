@@ -53,22 +53,20 @@ var t = `
 
 <div class='rooms'>
   {{#rooms}}
-    <div class='roomrow'>
-      <div class='room' data-room='{{@index}}'>
-        <div class='roomname'>{{name}}</div>
-        <div class='removeroom' data-room='{{@index}}'>&#x2715;</div>
-        <div class='measures'>
-          {{#measures}}
-            <div class='measurecontainer'>
-              <div class='measure{{#selected}} selected{{/selected}}' 
-                data-room='{{@../index}}'
-                data-measure='{{@index}}' 
-                href='#'>
-                {{name}}
-              </div>
+    <div class='room' data-room='{{@index}}'>
+      <div class='roomname'>{{name}}</div>
+      <div class='removeroom' data-room='{{@index}}'>&#x2715;</div>
+      <div class='measures'>
+        {{#measures}}
+          <div class='measurecontainer'>
+            <div class='measure{{#selected}} selected{{/selected}}' 
+              data-room='{{@../index}}'
+              data-measure='{{@index}}' 
+              href='#'>
+              {{name}}
             </div>
-            {{/measures}}
-        </div>
+          </div>
+          {{/measures}}
       </div>
     </div>
   {{/rooms}}
