@@ -37,6 +37,7 @@ gauge.set(0); // set actual value
 var t = `
 <div class='house'>
   <div class="margin-bottom margin-small">
+    <div class='roomicon'>house</div>
     <div class="heading-xsmall">Hele huset</div>
   </div>
   <div class='measures'>
@@ -54,8 +55,9 @@ var t = `
 <div class='rooms'>
   {{#rooms}}
     <div class='room' data-room='{{@index}}'>
-      <div class='roomname'>{{name}}</div>
-      <div class='removeroom' data-room='{{@index}}'>&#x2715;</div>
+    <div class='roomicon'>{{icon}}</div>
+    <div class='roomname'>{{name}}</div>
+    <div class='removeroom' data-room='{{@index}}'>&#x2715;</div>
       <div class='measures'>
         {{#measures}}
           <div class='measurecontainer'>
@@ -91,15 +93,16 @@ class Measure {
 }
 
 class Room {
-	constructor (name, measures) {
+	constructor (name, icon, measures) {
   	this.name = name;
+    this.icon = icon;
      for(const measure of measures) {
        this.measures.push(measure.clone());
     }
    }
   measures = [];
   clone() {
-    return new Room(this.name, this.measures);
+    return new Room(this.name, this.icon, this.measures);
   }
 }
 
@@ -219,11 +222,11 @@ $( document ).ready(function() {
   var fuktsensor        = new Measure('Fuktsensor', 60, '');
   
   rooms = {
-    'Stue'    : new Room('Stue',    [brannvarsler]),
-    'Kjøkken' : new Room('Kjøkken', [brannvarsler, lekkasjesensor]),
-    'Bad'     : new Room('Bad',     [brannvarsler, lekkasjesensor]),
-    'Soverom' : new Room('Soverom', [brannvarsler]),
-    'Kjeller' : new Room('Kjeller', [brannvarsler, fuktsensor])
+    'Stue'    : new Room('Stue',    'chair', [brannvarsler]),
+    'Kjøkken' : new Room('Kjøkken', 'kitchen', [brannvarsler, lekkasjesensor]),
+    'Bad'     : new Room('Bad',     'bathtub', [brannvarsler, lekkasjesensor]),
+    'Soverom' : new Room('Soverom', 'bed', [brannvarsler]),
+    'Kjeller' : new Room('Kjeller', 'stairs', [brannvarsler, fuktsensor])
   }
 
   const savedhouse = localStorage.getItem('ssx_house');
